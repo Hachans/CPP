@@ -5,30 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 09:25:52 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/04/25 12:57:39 by ekraujin         ###   ########.fr       */
+/*   Created: 2022/04/25 16:21:40 by ekraujin          #+#    #+#             */
+/*   Updated: 2022/04/25 19:55:08 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Karen.hpp"
 
-int main()
-{
-	{
-	Weapon club = Weapon("crude spiked club");
-	HumanA bob("Bob", club);
-	bob.attack();
-	club.setType("some other type of club");
-	bob.attack();
-	}
-	{
-	Weapon club = Weapon("crude spiked club");
-	HumanB jim("Jim");
-	jim.setWeapon(club);
-	jim.attack();
-	club.setType("some other type of club");
-	jim.attack();
-	}
-return 0;
+int main( void ){
+	
+	Karen Stacy;
+	std::cout << std::endl;
+	Stacy.complain("WARNING");
+	std::cout << std::endl;
+	Stacy.complain("INFO");
+	std::cout << std::endl;
+	Stacy.complain("DEBUG");
+	std::cout << std::endl;
+	Stacy.complain("ERROR");
+	std::cout << std::endl;
+	return 0;
 }

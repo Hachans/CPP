@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 09:25:52 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/04/25 12:57:39 by ekraujin         ###   ########.fr       */
+/*   Created: 2022/04/25 16:33:53 by ekraujin          #+#    #+#             */
+/*   Updated: 2022/04/25 19:54:49 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#ifndef KAREN_HPP
+#define KAREN_HPP
 
-int main()
-{
-	{
-	Weapon club = Weapon("crude spiked club");
-	HumanA bob("Bob", club);
-	bob.attack();
-	club.setType("some other type of club");
-	bob.attack();
-	}
-	{
-	Weapon club = Weapon("crude spiked club");
-	HumanB jim("Jim");
-	jim.setWeapon(club);
-	jim.attack();
-	club.setType("some other type of club");
-	jim.attack();
-	}
-return 0;
-}
+#include <iostream>
+#include <string>
+
+class Karen{
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+	public:
+		typedef void (Karen::*getFunc)(void);
+		Karen( void );
+		~Karen( void );
+		void complain( std::string level );
+};
+
+#endif

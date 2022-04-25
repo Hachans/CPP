@@ -5,30 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 09:25:52 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/04/25 12:57:39 by ekraujin         ###   ########.fr       */
+/*   Created: 2022/04/25 19:54:04 by ekraujin          #+#    #+#             */
+/*   Updated: 2022/04/25 20:16:55 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Karen.hpp"
 
-int main()
-{
-	{
-	Weapon club = Weapon("crude spiked club");
-	HumanA bob("Bob", club);
-	bob.attack();
-	club.setType("some other type of club");
-	bob.attack();
+int main(int argc, char **argv){
+	
+	if (argc != 2) {return 1;}
+	Karen Stacy;
+	std::string level = argv[1];
+	if (!level.compare("DEBUG") || !level.compare("INFO") || !level.compare("WARNING") || !level.compare("ERROR")){
+		Stacy.complain(level);
 	}
-	{
-	Weapon club = Weapon("crude spiked club");
-	HumanB jim("Jim");
-	jim.setWeapon(club);
-	jim.attack();
-	club.setType("some other type of club");
-	jim.attack();
+	else{
+		std::cout << "[  Probably complaining about insignificant problems ]" << std::endl;
 	}
-return 0;
+	return 0;
 }
