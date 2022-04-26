@@ -6,7 +6,7 @@
 #    By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/24 17:38:12 by ekraujin          #+#    #+#              #
-#    Updated: 2022/04/25 07:25:53 by ekraujin         ###   ########.fr        #
+#    Updated: 2022/04/25 13:00:13 by ekraujin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,15 +18,13 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = Account.cpp tests.cpp
 
-OBJ = $(SRC:.cpp=.o)
-
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(SRC)
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
-	rm -rf $(OBJ) $(NAME)
+	rm -rf $(NAME)
 
 re: clean all
 
