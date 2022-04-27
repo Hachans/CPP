@@ -6,7 +6,7 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:53:35 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/04/25 20:18:45 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/04/26 13:14:27 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ Karen::~Karen( void ){
 
 void Karen::complain( std::string level ){
 	int i = -1;
-	getFunc f[4]= { &Karen::info, &Karen::debug, &Karen::warning, &Karen::error};
-	std::string l[4] = {"INFO", "DEBUG", "WARNING", "ERROR"};
+	getFunc f[4]= { &Karen::debug, &Karen::info,  &Karen::warning, &Karen::error};
+	std::string l[4] = { "DEBUG", "INFO", "WARNING", "ERROR"};
 	while (level != l[++i]){
 	}
 	while (i < 4){
@@ -34,11 +34,11 @@ void Karen::complain( std::string level ){
 	}
 }
 
-void Karen::info( void ){
+void Karen::debug( void ){
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
 }
 
-void Karen::debug(void){
+void Karen::info(void){
 	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 }
 

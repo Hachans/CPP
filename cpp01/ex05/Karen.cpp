@@ -6,7 +6,7 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:26:31 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/04/25 20:15:16 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/04/26 13:13:00 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void Karen::complain( std::string level ){
 	}
 }
 
-void Karen::info( void ){
+void Karen::debug( void ){
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
 }
 
-void Karen::debug(void){
+void Karen::info(void){
 	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 }
 

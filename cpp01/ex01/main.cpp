@@ -6,14 +6,16 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 08:28:55 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/04/25 09:02:38 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/04/27 08:18:53 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 int main(){
-	Zombie *horde = zombieHorde(10, "zombee");
+
+	Zombie *horde = zombieHorde(10, "Jeff Bezos");
+	
 	delete[] horde;
 	return 0;
 }

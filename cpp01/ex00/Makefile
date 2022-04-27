@@ -6,7 +6,7 @@
 #    By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/25 07:22:15 by ekraujin          #+#    #+#              #
-#    Updated: 2022/04/25 08:05:13 by ekraujin         ###   ########.fr        #
+#    Updated: 2022/04/26 13:09:55 by ekraujin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,15 +18,13 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
-OBJ = $(SRC:.cpp=.o)
-
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(SRC)
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
-	rm -rf $(OBJ) $(NAME)
+	rm -rf $(NAME)
 
 re: clean all
 

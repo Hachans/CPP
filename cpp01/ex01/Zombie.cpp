@@ -6,7 +6,7 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 08:28:00 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/04/25 08:58:35 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/04/27 08:18:06 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,13 @@ Zombie::Zombie( void ){
 }
 
 Zombie::~Zombie( void ){
-	std::cout << get_name() << ": " << "got burried" << std::endl;
+	std::cout << _name << ": " << "got burried" << std::endl;
 }
 
 void Zombie::announce( void ){
-	std::cout << get_name() << ": " << "BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-std::string Zombie::get_name( void ){
-	return Zombie::name;
+	std::cout << _name << ": " << "BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void Zombie::set_name( std::string name ){
-	this->name = name;
+	this->_name = name;
 }
