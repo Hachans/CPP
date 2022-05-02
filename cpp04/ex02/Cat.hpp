@@ -6,7 +6,7 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 09:28:15 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/04/30 16:14:22 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/05/02 09:48:36 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat: public Animal, public Brain{
+class Cat: public Animal{
 
 		Brain* _brain;
 		
