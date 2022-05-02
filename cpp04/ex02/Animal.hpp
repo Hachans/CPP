@@ -6,7 +6,7 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 09:28:19 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/04/30 20:58:37 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/05/02 11:01:59 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Animal{
 		Animal& operator=(const Animal& boj);
 
 		std::string getType( void ) const;
-		virtual void makeSound( void ) const;
+		virtual void makeSound( void ) const = 0;
 	
 };
 

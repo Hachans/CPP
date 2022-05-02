@@ -6,7 +6,7 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 09:28:10 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/04/30 21:05:15 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/05/02 11:02:08 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int main()
 	
 	{
 		// Animal *animal = new Animal;
-		// animal->makeSound();
 		// delete animal;
 		
 		Cat *cat = new Cat;

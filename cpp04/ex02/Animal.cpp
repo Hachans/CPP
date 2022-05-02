@@ -6,7 +6,7 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 09:28:21 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/04/30 20:56:59 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/05/02 11:02:04 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,6 @@ Animal& Animal::operator=(const Animal& obj){
 	std::cout << "Animal class copy asignment" << std::endl;
 	this->_type = obj._type;
 	return *this;
-}
-
-void Animal::makeSound( void ) const{
-	std::cout << "Animals screaming!" << std::endl;
 }
 
 std::string Animal::getType( void ) const{
