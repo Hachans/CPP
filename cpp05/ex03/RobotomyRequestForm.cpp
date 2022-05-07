@@ -6,7 +6,7 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 10:12:00 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/05/05 17:18:14 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/05/05 20:47:43 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,12 @@ std::string RobotomyRequestForm::getTarget() const{
 void RobotomyRequestForm::execute( const Bureaucrat& execute) const {
 	if (this->getIfSigned() == false)
 		throw Form::FormNotSignedException();
+	if (this->getReqExec() < execute.getGrade())
+		throw Form::GradeTooLowException();
+	std::cout << "BRRRRRRRRRRRRRRRRRRRRRRR" << std::endl;
+	srand(time(NULL));
+	if ((rand() % 2) == 0)
+		std::cout << "Robotomy failed" << std::endl;
 	else
-	{	if (this->getReqExec() < execute.getGrade())
-			throw Form::GradeTooLowException();
-		else{
-			std::cout << "BRRRRRRRRRRRRRRRRRRRRRRR" << std::endl;
-			srand(time(NULL));
-			if ((rand() % 2) == 0)
-				std::cout << "Robotomy failed" << std::endl;
-			else
-				std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;
-		}
-			
-	}
+		std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;
 }

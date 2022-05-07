@@ -6,7 +6,7 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 11:37:54 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/05/05 17:45:33 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/05/05 20:56:07 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,13 @@ Form* Intern::makeForm( std::string form, std::string target ){
 		for(int i = 0; i < 3; i++){
 			if (form == l[i]){
 				return (this->*f[i])(target);
-				check = 1;
 			}
 		}
 		if (!check)
 			throw Intern::FormNotFoundException();
 	}
-	catch (Intern::FormNotFoundException & e){
-		std::cout << e.what() << std::endl;
-		return nullptr;
+	catch(Intern::FormNotFoundException & e){
+		std::cout << "Exception cought " << e.what() << std::endl;
 	}
 	return nullptr;
 }

@@ -6,7 +6,7 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 10:42:00 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/05/05 17:18:34 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/05/05 20:48:32 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,35 +45,30 @@ std::string ShrubberyCreationForm::getTarget() const{
 void ShrubberyCreationForm::execute( const Bureaucrat& execute) const {
 	if (this->getIfSigned() == false)
 		throw Form::FormNotSignedException();
-	else
-	{	if (this->getReqExec() < execute.getGrade())
-			throw Form::GradeTooLowException();
-		else{
-			std::string name = this->getTarget() + "_shrubbery";
-			std::ofstream outfile(name);
-			outfile << "                     - - -" << std::endl;
-			outfile << "                   -        -  -     --    -" << std::endl;
-			outfile << "                -                 -         -  -" << std::endl;
-			outfile << "                                -" << std::endl;
-			outfile << "                               -                --" << std::endl;
-			outfile << "               -          -            -              -" << std::endl;
-			outfile << "               -            '-,        -               -" << std::endl;
-			outfile << "               -              'b      *" << std::endl;
-			outfile << "                -              '$    #-                --" << std::endl;
-			outfile << "               -    -           $:   #:               -" << std::endl;
-			outfile << "             --      -  --      *#  @):        -   - -" << std::endl;
-			outfile << "                          -     :@,@):   ,-**:'   -" << std::endl;
-			outfile << "              -      -,         :@@*: --**'      -   -" << std::endl;
-			outfile << "                       '#o-    -:(@'-@*'  -" << std::endl;
-			outfile << "               -  -       'bq,--:,@@*'   ,*      -  -" << std::endl;
-			outfile << "                          ,p$q8,:@)'  -p*'      -" << std::endl;
-			outfile << "                   -     '  - '@@Pp@@*'    -  -" << std::endl;
-			outfile << "                   -  - --    Y7'.'     -  -" << std::endl;
-			outfile << "                              :@):." << std::endl;
-			outfile << "                             .:@:'." << std::endl;
-			outfile << "                           .::(@:.      -Sam Blumenstein-" << std::endl;
-			
-			outfile.close();
-		}
-	}
+	if (this->getReqExec() < execute.getGrade())
+		throw Form::GradeTooLowException();
+	std::string name = this->getTarget() + "_shrubbery";
+	std::ofstream outfile(name);
+	outfile << "                     - - -" << std::endl;
+	outfile << "                   -        -  -     --    -" << std::endl;
+	outfile << "                -                 -         -  -" << std::endl;
+	outfile << "                                -" << std::endl;
+	outfile << "                               -                --" << std::endl;
+	outfile << "               -          -            -              -" << std::endl;
+	outfile << "               -            '-,        -               -" << std::endl;
+	outfile << "               -              'b      *" << std::endl;
+	outfile << "                -              '$    #-                --" << std::endl;
+	outfile << "               -    -           $:   #:               -" << std::endl;
+	outfile << "             --      -  --      *#  @):        -   - -" << std::endl;
+	outfile << "                          -     :@,@):   ,-**:'   -" << std::endl;
+	outfile << "              -      -,         :@@*: --**'      -   -" << std::endl;
+	outfile << "                       '#o-    -:(@'-@*'  -" << std::endl;
+	outfile << "               -  -       'bq,--:,@@*'   ,*      -  -" << std::endl;
+	outfile << "                          ,p$q8,:@)'  -p*'      -" << std::endl;
+	outfile << "                   -     '  - '@@Pp@@*'    -  -" << std::endl;
+	outfile << "                   -  - --    Y7'.'     -  -" << std::endl;
+	outfile << "                              :@):." << std::endl;
+	outfile << "                             .:@:'." << std::endl;
+	outfile << "                           .::(@:.      -Sam Blumenstein-" << std::endl;
+	outfile.close();
 }

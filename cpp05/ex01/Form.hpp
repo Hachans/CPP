@@ -6,7 +6,7 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:37:54 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/05/04 16:32:40 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/05/07 09:27:22 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ class Form{
 				}
 		};
 		
-		bool beSigned( const Bureaucrat& obj );
+		void beSigned( const Bureaucrat& obj );
 		bool getIfSigned() const;
 		const std::string getName() const;
 		int getReqSign() const;

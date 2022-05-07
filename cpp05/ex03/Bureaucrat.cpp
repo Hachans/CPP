@@ -6,34 +6,19 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 11:11:17 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/05/05 11:32:50 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/05/05 20:20:53 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat( const std::string name, int grade ) : _name(name){
+	if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	this->_grade = grade;
 	std::cout << "Bureaucrat " << _name <<  " appeared" << std::endl;
-	try
-	{
-		if (grade > 150)
-			throw Bureaucrat::GradeTooLowException();
-		else if (grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else{
-			this->_grade = grade;
-		}
-	}
-	catch (Bureaucrat::GradeTooLowException & e)
-	{
-		std::cout << e.what() << std::endl;
-		this->_grade = 75;
-	}
-	catch (Bureaucrat::GradeTooHighException & e)
-	{
-		std::cout << e.what() << std::endl;
-		this->_grade = 75;
-	}
 }
 
 Bureaucrat::Bureaucrat() : _name("Normal Bureaucrat"), _grade(150){
@@ -64,32 +49,24 @@ int Bureaucrat::getGrade( void ) const{
 }
 
 void Bureaucrat::increment( void ){
-	try
-	{
+	try{
 		if (this->_grade - 1 < 1)
 			throw Bureaucrat::GradeTooHighException();
-		else{
-			this->_grade -= 1;
-		}
+		this->_grade -= 1;
 	}
-	catch (Bureaucrat::GradeTooHighException & e)
-	{
+	catch (Bureaucrat::GradeTooHighException & e){
 		std::cout << e.what() << '\n';
 		this->_grade = 1;
 	}
 }
 
 void Bureaucrat::decrement( void ){
-	try
-	{
+	try{
 		if (this->_grade + 1 > 150)
 			throw Bureaucrat::GradeTooLowException();
-		else{
-			this->_grade += 1;
-		}
+		this->_grade += 1;
 	}
-	catch (Bureaucrat::GradeTooLowException & e)
-	{
+	catch (Bureaucrat::GradeTooLowException & e){
 		std::cout << e.what() << '\n';
 		this->_grade = 150;
 	}
@@ -112,7 +89,6 @@ void Bureaucrat::executeForm( Form const & form){
 	}
 	catch(Form::GradeTooLowException & e){
 		std::cout << "Rejected execution: " << e.what() << std::endl;
-
 	}
 }
 

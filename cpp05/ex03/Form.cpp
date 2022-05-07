@@ -6,31 +6,24 @@
 /*   By: ekraujin <ekraujin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 18:06:03 by ekraujin          #+#    #+#             */
-/*   Updated: 2022/05/05 17:39:09 by ekraujin         ###   ########.fr       */
+/*   Updated: 2022/05/05 20:21:30 by ekraujin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 Form::Form() : _name("Standart Form"), _signed(false), _reqsign(75), _reqexec(75){
-	
+	std::cout << "Standart Form created" << std::endl;
 }
 
 Form::Form( const std::string name, const int sign, const int exec ) :
 	_name(name), _signed(false), _reqsign(sign), _reqexec(exec){
+	
+	if(this->_reqsign < 1 || this->_reqexec < 1)
+		throw Form::GradeTooHighException();
+	if(this->_reqsign > 150 || this->_reqexec > 150)
+		throw Form::GradeTooLowException();
 	std::cout << "Form created" << std::endl;
-	try{
-		if(this->_reqsign < 1 || this->_reqexec < 1)
-			throw Form::GradeTooHighException();
-		if(this->_reqsign > 150 || this->_reqexec > 150)
-			throw Form::GradeTooLowException();
-	}
-	catch (Form::GradeTooLowException & e){
-		std::cout << e.what() << std::endl;
-	}
-	catch (Form::GradeTooHighException & e){
-		std::cout << e.what() << std::endl;
-	}
 }
 
 Form::~Form(){
@@ -68,8 +61,7 @@ void Form::beSigned( const Bureaucrat& obj ){
 	try{
 		if (obj.getGrade() > this->getReqSign())
 			throw Form::GradeTooLowException();
-		else
-			this->_signed = true;
+		this->_signed = true;
 	}
 	catch (Form::GradeTooLowException & e){
 		std::cout << e.what() << std::endl;
